@@ -35,8 +35,8 @@ export const Message = () => {
         </div>
         <div className="mt-1 hover:bg-gray-800/30 px-4 py-1">
           <p className="text-gray-300 pl-14">
-            Since we changed this in tailwind 2 I've almost never used a leading
-            class at all
+            Since we changed this in tailwind 2 I&apos;ve almost never used a
+            leading class at all
           </p>
         </div>
       </div>
