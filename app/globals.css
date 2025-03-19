@@ -36,3 +36,16 @@ body {
     background: transparent; /* Track color */
   }
 }
+
+@theme {
+  --color-gray-50: #ECEDEE;
+  --color-gray-100: #DCDDDE;
+  --color-gray-200: #B9BBBE;
+  --color-gray-300: #8E9297;
+  --color-gray-400: #72767d;
+  --color-gray-500: #5C6067;
+  --color-gray-600: #464950;
+  --color-gray-700: #36393F;
+  --color-gray-800: #2F3136;
+  --color-gray-900: #202225;
+}
