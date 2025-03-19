@@ -1,21 +1,11 @@
 export default function Home() {
   return (
-    <div className="flex text-gray-100 h-screen">
-      <div className="bg-gray-900 p-3 space-y-2 overflow-y-scroll scroll-thin">
-        {[...Array(40)].map((_, i) => (
-          <div
-            key={i}
-            className="bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center"
-          >
-            {i}
-          </div>
-        ))}
-      </div>
+    <>
       <div className="bg-gray-800 w-60 flex flex-col">
-        <div className="px-3 h-12 flex items-center shadow-md shrink-0">
+        <div className="px-3 h-12 flex items-center shadow-md shrink-0 font-ginto text-white">
           Tailwind CSS
         </div>
-        <div className="text-gray-300 p-3 flex-1 overflow-y-scroll space-y-2 scroll-thin">
+        <div className="text-gray-300 p-3 flex-1 overflow-y-scroll space-y-2 scroll-thin font-medium">
           <p className={"text-white"}>channel (unread)</p>
           <p className={"text-white"}>channel (unread)</p>
           {[...Array(40)].map((_, i) => (
@@ -31,6 +21,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }

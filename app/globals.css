@@ -38,6 +38,12 @@ body {
 }
 
 @theme {
+
+  --font-whitney: var(--font-whitney);
+  --font-ginto: var(--font-ginto);
+
+  --color-brand: #5865F2;
+
   --color-gray-50: #ECEDEE;
   --color-gray-100: #DCDDDE;
   --color-gray-200: #B9BBBE;
@@ -48,4 +54,9 @@ body {
   --color-gray-700: #36393F;
   --color-gray-800: #2F3136;
   --color-gray-900: #202225;
+
+
+
+
+
 }
