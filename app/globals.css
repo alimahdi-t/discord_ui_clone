@@ -19,3 +19,20 @@ body {
   /*color: var(--foreground);*/
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@utility scroll-thin {
+  @apply overflow-y-auto; /* Ensure it applies to scrollable elements */
+
+  &::-webkit-scrollbar {
+    width: 6px; /* Thin scrollbar */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #444; /* Thumb color */
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Track color */
+  }
+}
