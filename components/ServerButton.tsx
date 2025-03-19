@@ -6,10 +6,9 @@ import React from "react";
 export const ServerButton = ({
   href,
   children,
-  label,
 }: {
   href: string;
-  label: string;
+
   children?: React.ReactNode;
 }) => {
   const pathname = usePathname();
@@ -31,9 +30,9 @@ export const ServerButton = ({
               ? "rounded-2xl bg-brand text-white"
               : "group- hover:rounded-2xl group- hover:bg-brand group- hover:text-white bg-gray-700 rounded-3xl"
           } text-gray-100 w-12 h-12 flex items-center justify-center
-              transition-all duration-200`}
+              transition-all duration-200 overflow-hidden`}
         >
-          {children ? children : label}
+          {children}
         </div>
       </div>
     </Link>

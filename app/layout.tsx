@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { DiscordIcon } from "@/components/DiscordIcon";
 import { ServerButton } from "@/components/ServerButton";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -46,6 +47,12 @@ const Whitney = localFont({
   ],
 });
 
+const servers = [
+  { id: "1", img: "/images/servers/tailwind.png" },
+  { id: "2", img: "/images/servers/next.png" },
+  { id: "3", img: "/images/servers/mirage.png" },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -56,10 +63,16 @@ export default function RootLayout({
       <body className={`${Ginto.variable} ${Whitney.variable}  antialiased`}>
         <div className="flex text-gray-100 h-screen">
           <div className="bg-gray-900 p-3 space-y-2 overflow-y-scroll scroll-thin">
-            <ServerButton href={"/"} label={"Discord"}>
+            <ServerButton href={"/"}>
               <DiscordIcon className="w-7 h-5 text-gray-100" />
             </ServerButton>
-            <ServerButton href={"/servers/1"} label="S1" />
+
+            <hr className="border-t-white/6 border-t-4 rounded mx-2 " />
+            {servers.map((server) => (
+              <ServerButton href={`/servers/${server.id}`}>
+                <Image src={server.img} width={48} height={48} alt="" />
+              </ServerButton>
+            ))}
             {/*{[...Array(40)].map((_, i) => (*/}
             {/*  <div*/}
             {/*    key={i}*/}
