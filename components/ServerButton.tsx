@@ -5,9 +5,11 @@ import React from "react";
 
 export const ServerButton = ({
   href,
+  active,
   children,
 }: {
   href: string;
+  active: string;
 
   children?: React.ReactNode;
 }) => {
@@ -17,7 +19,7 @@ export const ServerButton = ({
       <div className="absolute flex items-center flex-1 h-full -left-3">
         <div
           className={`${
-            pathname === href
+            pathname.startsWith(active)
               ? "h-10"
               : "h-5 scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100"
           } absolute bg-white w-1 rounded-r  transition-all duration-200 origin-left`}
@@ -26,7 +28,7 @@ export const ServerButton = ({
       <div className="group-active:translate-y-px">
         <div
           className={`${
-            pathname === href
+            pathname.startsWith(active)
               ? "rounded-2xl bg-brand text-white"
               : "group- hover:rounded-2xl group- hover:bg-brand group- hover:text-white bg-gray-700 rounded-3xl"
           } text-gray-100 w-12 h-12 flex items-center justify-center

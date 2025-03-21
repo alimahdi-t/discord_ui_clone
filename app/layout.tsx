@@ -63,13 +63,17 @@ export default function RootLayout({
       <body className={`${Ginto.variable} ${Whitney.variable}  antialiased`}>
         <div className="flex text-gray-100 h-screen">
           <div className="bg-gray-900 p-3 space-y-2 overflow-y-scroll scroll-thin">
-            <ServerButton href={"/"}>
+            <ServerButton href={"/"} active={"#"}>
               <DiscordIcon className="w-7 h-5 text-gray-100" />
             </ServerButton>
 
             <hr className="border-t-white/6 border-t-4 rounded mx-2 " />
             {servers.map((server) => (
-              <ServerButton key={server.id} href={`/servers/${server.id}`}>
+              <ServerButton
+                key={server.id}
+                href={`/servers/${server.id}/channels/1`}
+                active={`/servers/${server.id}`}
+              >
                 <Image src={server.img} width={48} height={48} alt="" />
               </ServerButton>
             ))}

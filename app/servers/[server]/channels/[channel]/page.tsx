@@ -4,11 +4,11 @@ import data from "@/data/data.json";
 import { ChannelLink } from "@/components/ChannelLink";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ server: string; channel: string }>;
 }
 
 const Server1 = async (props: Props) => {
-  const { slug } = await props.params;
+  const { channel, server } = await props.params;
 
   return (
     <>
@@ -18,7 +18,7 @@ const Server1 = async (props: Props) => {
             <Icons.VerifiedIcon className="absolute w-4 h-4 text-gray-600/15 transition-all" />
             <Icons.CheckIcon className="absolute w-4 h-4" />
           </div>
-          Server {slug}
+          Server {server}
           <Icons.ChevronIcon className="w-[18px] h-[18px] ml-auto opacity-80" />
         </button>
         <div className="text-gray-300 flex-1 overflow-y-scroll  scroll-thin font-medium pt-3 space-y-5">
@@ -32,7 +32,11 @@ const Server1 = async (props: Props) => {
               )}
               <div className="space-y-0.5 mt-[5px]">
                 {category.channels.map((channel) => (
-                  <ChannelLink key={channel.id} channel={channel} />
+                  <ChannelLink
+                    key={channel.id}
+                    channel={channel}
+                    server={server}
+                  />
                 ))}
               </div>
             </div>
