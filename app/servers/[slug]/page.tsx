@@ -1,4 +1,7 @@
-import { CheckIcon, ChevronIcon, VerifiedIcon } from "@/components/icons";
+import * as Icons from "@/components/icons";
+
+import data from "@/data/data.json";
+import { ChannelLink } from "@/components/ChannelLink";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -10,19 +13,29 @@ const Server1 = async (props: Props) => {
   return (
     <>
       <div className="bg-gray-800 w-60 flex flex-col">
-        <button className="px-4 h-12 flex items-center shadow-sm shrink-0 font-ginto text-[15px] text-white hover:bg-gray-500/15">
+        <button className="px-4 h-12 flex items-center shadow-sm shrink-0 font-ginto text-[15px] text-white hover:bg-gray-600/15">
           <div className="relative w-4 h-4 mr-1">
-            <VerifiedIcon className="absolute w-4 h-4 text-gray-600/15 transition-all" />
-            <CheckIcon className="absolute w-4 h-4" />
+            <Icons.VerifiedIcon className="absolute w-4 h-4 text-gray-600/15 transition-all" />
+            <Icons.CheckIcon className="absolute w-4 h-4" />
           </div>
           Server {slug}
-          <ChevronIcon className="w-[18px] h-[18px] ml-auto opacity-80" />
+          <Icons.ChevronIcon className="w-[18px] h-[18px] ml-auto opacity-80" />
         </button>
-        <div className="text-gray-300 p-3 flex-1 overflow-y-scroll space-y-2 scroll-thin font-medium">
-          <p className={"text-white"}>channel (unread)</p>
-          <p className={"text-white"}>channel (unread)</p>
-          {[...Array(40)].map((_, i) => (
-            <p key={i}>Channels {i}</p>
+        <div className="text-gray-300 flex-1 overflow-y-scroll  scroll-thin font-medium pt-3 space-y-5">
+          {data["1"].categories.map((category) => (
+            <div key={category.id}>
+              {category.label && (
+                <button className="flex items-center px-0.5 text-xs font-ginto uppercase tracking-wide">
+                  <Icons.ArrowComponent className="w-3 h-3 mr-0.5" />
+                  {category.label}
+                </button>
+              )}
+              <div className="space-y-0.5 mt-[5px]">
+                {category.channels.map((channel) => (
+                  <ChannelLink key={channel.id} channel={channel} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
