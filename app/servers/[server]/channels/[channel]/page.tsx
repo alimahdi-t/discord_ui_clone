@@ -5,13 +5,16 @@ import data from "@/data/data.json";
 import { ChannelLink } from "@/components/ChannelLink";
 import { useState } from "react";
 import { useParams } from "next/navigation";
+import { Message } from "@/components/Message";
 
 const Server1 = () => {
   const params = useParams<{ channel: string; server: string }>();
   const { channel, server } = params;
   console.log(channel);
 
-  const [closedCategories, setClosedCategories] = useState<number[]>([]);
+  const [closedCategories, setClosedCategories] = useState<number[]>([
+    2, 3, 4, 5, 6,
+  ]);
 
   function toggleCategory(categoryId: number) {
     setClosedCategories((closedCategories) =>
@@ -72,7 +75,9 @@ const Server1 = () => {
         <div className="px-3 h-12 flex items-center shadow-sm">Generals</div>
         <div className="px-3 flex-1 space-y-4 overflow-y-scroll scroll-thin">
           {[...Array(40)].map((_, i) => (
-            <p key={i}>Message {i}</p>
+            <p key={i}>
+              <Message />
+            </p>
           ))}
         </div>
       </div>
