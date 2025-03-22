@@ -6,46 +6,55 @@
         "id": 1,
         "label": "",
         "channels": [
-          { "id": 1, "label": "welcome", "icon": "BookIcon" },
-          { "id": 2, "label": "announcements", "icon": "SpeakerphoneIcon" }
+          { "id": 1, "label": "welcome", "icon": "BookIcon","unread": false },
+          { "id": 2, "label": "announcements", "icon": "SpeakerphoneIcon","unread": false }
         ]
       },
       {
         "id": 2,
         "label": "Tailwind CSS",
         "channels": [
-          { "id": 3, "label": "general"},
-          { "id": 4, "label": "plugins" },
-          { "id": 5, "label": "help"},
-          { "id": 6, "label": "internals"}
+          { "id": 3, "label": "general", "unread": true},
+          { "id": 4, "label": "plugins", "unread": true },
+          { "id": 5, "label": "help", "unread": true},
+          { "id": 6, "label": "internals", "unread": false}
         ]
       },
       {
         "id": 3,
         "label": "Tailwind Labs",
         "channels": [
-          { "id": 7, "label": "tailwind-ui"},
-          { "id": 8, "label": "headless-ui"},
-          { "id": 9, "label": "refactoring-ui" },
-          { "id": 10, "label": "heroicons"}
+          { "id": 7, "label": "tailwind-ui", "unread": false},
+          { "id": 8, "label": "headless-ui","unread": false},
+          { "id": 9, "label": "refactoring-ui","unread": true },
+          { "id": 10, "label": "heroicons","unread": true}
         ]
       },
       {
         "id": 4,
         "label": "Off topic",
         "channels": [
-          { "id": 11, "label": "design" },
-          { "id": 12, "label": "development" },
-          { "id": 13, "label": "random" }
+          { "id": 11, "label": "design", "unread": false},
+          { "id": 12, "label": "development", "unread": false},
+          { "id": 13, "label": "random","unread": true }
         ]
       },
       {
         "id": 5,
         "label": "Community",
         "channels": [
-          { "id": 14, "label": "jobs"},
-          { "id": 15, "label": "showcase"},
-          { "id": 16, "label": "bots" }
+          { "id": 14, "label": "jobs","unread": false},
+          { "id": 15, "label": "showcase","unread": false},
+          { "id": 16, "label": "bots", "unread": false}
+        ]
+      },
+      {
+        "id": 6,
+        "label": "FAQ",
+        "channels": [
+          { "id": 17, "label": "payments","unread": true},
+          { "id": 18, "label": "courses","unread": false},
+          { "id": 19, "label": "important", "unread": false}
         ]
       }
     ]
